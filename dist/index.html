@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Videoplayer</title>
+  </head>
+  <body>
+    <h1>VideoPlayer</h1>
+    <figure id="videoplayer" class="figure">
+      <button id="repeat" type="button" data-state="repeat">Repeat</button>
+      <button id="play-overlay" type="button" data-state="play">Play</button>
+      <video 
+        id="video"
+        src="http://v1-rtc.1internet.tv/video/multibitrate/video/2018/12/13/3c7a1fae-88d5-48cb-a451-17fa7f8082ef_20180511_Dekabristi_new_950.mp4"
+        autoplay
+      >
+      </video>
+      <div id="video-controls" class="controls" data-state="hidden">
+        <div class="progress">
+          <progress id="progress" value="0" min="0">
+            <span id="progress-bar"></span>
+          </progress>
+        </div>
+        <button id="mute" type="button" data-state="mute">Mute/Unmute</button>
+      </div>
+    </figure>
+  <script type="text/javascript" src="main.js"></script></body>
+</html>
