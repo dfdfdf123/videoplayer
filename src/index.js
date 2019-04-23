@@ -1,3 +1,6 @@
-import init from './init';
+import '@babel/polyfill';
+import './css/style.css';
 
-init();
+const controls = document.getElementById('video-controls');
+
+controls.setAttribute('data-state', 'visible');
