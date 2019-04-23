@@ -3,18 +3,25 @@ import './css/style.css';
 
 const video = document.getElementById('video');
 const mute = document.getElementById('mute');
-const playpause = document.getElementById('playpause');
+const playOverlay = document.getElementById('play-overlay');
+const repeat = document.getElementById('repeat');
 const progress = document.getElementById('progress');
+const progressBar = document.getElementById('progress-bar');
 const controls = document.getElementById('video-controls');
 
 controls.setAttribute('data-state', 'visible');
 
 const changeButtonState = (type) => {
-  const playpauseState = (video.paused || video.ended) ?
-                           playpause.setAttribute('data-state', 'play') :
-                           playpause.setAttribute('data-state', 'pause');
+  const endedState = video.ended ? 'block' : 'none';
+  repeat.style.display = endedState;
+  const playpauseState = video.paused && !video.ended ? 'block' : 'none';
+  playOverlay.style.display = playpauseState;
   if (type === 'playpause') {
-    playpauseState;
+    if (video.paused) {
+      playOverlay.setAttribute('data-state', 'play');
+    } else {
+      playOverlay.setAttribute('data-state', 'pause');
+    }
   } else if (type === 'mute') {
     mute.setAttribute('data-state', video.muted ? 'unmute' : 'mute');
   }
@@ -27,35 +34,44 @@ const playpauseHandler = (e) => {
   } else {
     video.pause();
   }
-}
+};
 
-video.addEventListener('play', function() {
+video.addEventListener('play', () => {
   changeButtonState('playpause');
 });
 
-video.addEventListener('pause', function() {
+video.addEventListener('pause', () => {
   changeButtonState('playpause');
 });
 
-progress.addEventListener('click', function(e) {
+video.addEventListener('timeupdate', () => {
+  if (!progress.getAttribute('max')) {
+    progress.setAttribute('max', video.duration);
+  }
+  progress.value = video.currentTime;
+  progressBar.style.width = `${Math.floor((video.currentTime / video.duration) * 100)}%`;
+});
+
+video.addEventListener('click', (e) => {
+  e.preventDefault();
+  video.pause();
+});
+
+progress.addEventListener('click', (e) => {
   e.preventDefault();
   const pos = (e.pageX - (this.offsetLeft + this.offsetParent.offsetLeft)) / this.offsetWidth;
   video.currentTime = pos * video.duration;
 });
 
-video.addEventListener('timeupdate', function() {
-  if (!progress.getAttribute('max')) {
-    progress.setAttribute('max', video.duration);
-  }
-  progress.value = video.currentTime;
-  progressBar.style.width = Math.floor((video.currentTime / video.duration) * 100) + '%';
-});
-
-mute.addEventListener('click', function(e) {
+mute.addEventListener('click', (e) => {
   e.preventDefault();
   video.muted = !video.muted;
   changeButtonState('mute');
 });
 
-video.addEventListener('click', playpauseHandler);
-playpause.addEventListener('click', playpauseHandler);
+playOverlay.addEventListener('click', playpauseHandler);
+
+repeat.addEventListener('click', (e) => {
+  e.preventDefault();
+  video.play();
+});

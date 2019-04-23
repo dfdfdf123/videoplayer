@@ -75,19 +75,19 @@
     <path
        id="rect1411"
        d="m 45.202728,239.85 -11.681127,7.05035 -0.07529,0.0298 h -19.59367 a 11.736332,16.202771 0 0 0 -10.163618,8.10165 11.736332,16.202771 0 0 0 0,16.20269 11.736332,16.202771 0 0 0 10.163618,8.10107 h 19.593668 l 0.02602,0.011 11.730401,7.0701 v -2.45084 -41.66426 z"
-       style="fill:blue;fill-rule:evenodd;stroke-width:0.21164419" />
+       style="fill:black;fill-rule:evenodd;stroke-width:0.21164419" />
     <path
        id="path879"
        d="m 49.738098,281.51426 c 4.108291,-1.24222 7.771663,-3.90699 10.218624,-7.43312 2.446961,-3.52612 3.661375,-7.89035 3.387491,-12.17359 -0.247801,-3.87533 -1.705284,-7.66467 -4.11828,-10.70721 -2.412995,-3.04253 -5.770797,-5.32476 -9.487835,-6.44868"
-       style="opacity:1;vector-effect:none;fill:blue;fill-opacity:1;stroke:blue;stroke-width:4.71496964;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+       style="opacity:1;vector-effect:none;fill:black;fill-opacity:1;stroke:black;stroke-width:4.71496964;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <path
        id="path893"
        d="m 49.738097,274.16175 c 2.031921,-1.02033 3.771789,-2.6145 4.965488,-4.54967 1.193699,-1.93516 1.837569,-4.20539 1.83757,-6.47911 10e-7,-2.27372 -0.643868,-4.54395 -1.837568,-6.47912 -1.193699,-1.93516 -2.933568,-3.52933 -4.96549,-4.54967"
-       style="opacity:1;vector-effect:none;fill:blue;fill-opacity:1;stroke:blue;stroke-width:4.71496964;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+       style="opacity:1;vector-effect:none;fill:black;fill-opacity:1;stroke:black;stroke-width:4.71496964;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <path
        transform="matrix(0,1,1,0,0,0)"
        d="m 269.48333,47.625 a 6.3499985,5.2916651 0 0 1 -3.175,4.582716 6.3499985,5.2916651 0 0 1 -6.35,0 6.3499985,5.2916651 0 0 1 -3.175,-4.582716"
        id="path831"
-       style="fill:blue;fill-rule:evenodd;stroke-width:0.16263367" />
+       style="fill:black;fill-rule:evenodd;stroke-width:0.16263367" />
   </g>
 </svg>
