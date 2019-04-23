@@ -10,12 +10,11 @@ const controls = document.getElementById('video-controls');
 controls.setAttribute('data-state', 'visible');
 
 const changeButtonState = (type) => {
+  const playpauseState = (video.paused || video.ended) ?
+                           playpause.setAttribute('data-state', 'play') :
+                           playpause.setAttribute('data-state', 'pause');
   if (type === 'playpause') {
-    if (video.paused || video.ended) {
-      playpause.setAttribute('data-state', 'play');
-    } else {
-      playpause.setAttribute('data-state', 'pause');
-    }
+    playpauseState;
   } else if (type === 'mute') {
     mute.setAttribute('data-state', video.muted ? 'unmute' : 'mute');
   }
@@ -40,7 +39,7 @@ video.addEventListener('pause', function() {
 
 progress.addEventListener('click', function(e) {
   e.preventDefault();
-  const pos = (e.pageX  - (this.offsetLeft + this.offsetParent.offsetLeft)) / this.offsetWidth;
+  const pos = (e.pageX - (this.offsetLeft + this.offsetParent.offsetLeft)) / this.offsetWidth;
   video.currentTime = pos * video.duration;
 });
 
