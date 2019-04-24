@@ -11,13 +11,16 @@ const controls = document.getElementById('video-controls');
 
 controls.setAttribute('data-state', 'visible');
 
+const supportsProgress = (document.createElement('progress').max !== undefined);
+if (!supportsProgress) progress.setAttribute('data-state', 'fake');
+
 const changeButtonState = (type) => {
   const endedState = video.ended ? 'block' : 'none';
   repeat.style.display = endedState;
   const playpauseState = video.paused && !video.ended ? 'block' : 'none';
   playOverlay.style.display = playpauseState;
   if (type === 'playpause') {
-    if (video.paused) {
+    if (video.paused || video.ended) {
       playOverlay.setAttribute('data-state', 'play');
     } else {
       playOverlay.setAttribute('data-state', 'pause');
@@ -57,8 +60,7 @@ video.addEventListener('click', (e) => {
   video.pause();
 });
 
-progress.addEventListener('click', (e) => {
-  e.preventDefault();
+progress.addEventListener('click', function (e) {
   const pos = (e.pageX - (this.offsetLeft + this.offsetParent.offsetLeft)) / this.offsetWidth;
   video.currentTime = pos * video.duration;
 });

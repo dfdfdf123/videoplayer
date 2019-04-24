@@ -30,7 +30,7 @@ figure {
   height:435px;
   margin:10px auto;
 	background-color:#666;
-	z-index: 0;
+	z-index: -1;
 }
 
 video {
@@ -74,16 +74,16 @@ video {
 }
 
 .controls button {
-	text-align: center;
-	overflow: hidden;
-	white-space: nowrap;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
   border: none;
   cursor: pointer;
   text-indent: -99999px;
   background: transparent;
   background-size: contain;
-	background-repeat: no-repeat;
+  background-repeat: no-repeat;
 }
 
 .controls button:hover, .controls button:focus {
@@ -113,6 +113,7 @@ video {
   border: none;
   cursor: pointer;
   text-indent: -99999px;
+  z-index: 99999;
 }
 
 #repeat:hover {
@@ -144,6 +145,7 @@ video {
   border: none;
   cursor: pointer;
   text-indent: -99999px;
+  z-index: 9999;
 }
 
 #play-overlay:hover {
